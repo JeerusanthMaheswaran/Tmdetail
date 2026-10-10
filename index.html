@@ -4,225 +4,386 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TM Auto Detailing</title>
-  <meta name="description" content="TM Auto Detailing — professional interior and exterior car detailing, paint correction and ceramic coating. Book your detail today.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f14'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' text-anchor='middle' fill='%2338bdf8'%3ETM%3C/text%3E%3C/svg%3E">
+  <meta name="description" content="TM Auto Detailing — mobile car detailing, interior deep cleans, paint correction and ceramic coating. Book in seconds on WhatsApp.">
+  <meta name="theme-color" content="#07090d">
+  <link rel="canonical" href="https://detailing.jeerusanth.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="TM Auto Detailing">
+  <meta property="og:description" content="Mobile car detailing, paint correction and ceramic coating. Book in seconds on WhatsApp.">
+  <meta property="og:url" content="https://detailing.jeerusanth.com/">
+  <meta property="og:image" content="https://detailing.jeerusanth.com/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoWash",
+    "name": "TM Auto Detailing",
+    "url": "https://detailing.jeerusanth.com/",
+    "image": "https://detailing.jeerusanth.com/og.png",
+    "priceRange": "$$",
+    "openingHours": "Mo-Sa 08:00-19:00"
+  }
+  </script>
   <style>
     :root {
-      --bg: #0b0f14;
-      --bg-alt: #111821;
-      --card: #151e29;
-      --line: #223042;
-      --text: #e8eef5;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
-      --accent-2: #0ea5e9;
-      --radius: 16px;
-      --max: 1140px;
+      --bg: #07090d;
+      --bg-alt: #0d1218;
+      --card: #121a24;
+      --card-2: #172231;
+      --line: #1f2c3d;
+      --text: #eef3f8;
+      --muted: #93a3b8;
+      --accent: #22d3ee;
+      --accent-2: #818cf8;
+      --hot: #f472b6;
+      --wa: #25d366;
+      --wa-dark: #128c7e;
+      --radius: 18px;
+      --max: 1180px;
+      --grad: linear-gradient(110deg, var(--accent), var(--accent-2) 55%, var(--hot));
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
     body {
       font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
+      background: var(--bg); color: var(--text); line-height: 1.6;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden;
     }
     a { color: inherit; text-decoration: none; }
-    img, svg { display: block; max-width: 100%; }
+    svg { display: block; }
     .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 20px; }
-    section { padding: 96px 0; }
+    section { padding: 104px 0; position: relative; }
     .eyebrow {
-      color: var(--accent); font-weight: 600; font-size: .8rem;
-      letter-spacing: .14em; text-transform: uppercase; margin-bottom: 12px;
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--accent); font-weight: 700; font-size: .78rem;
+      letter-spacing: .16em; text-transform: uppercase; margin-bottom: 14px;
     }
-    h1, h2, h3 { line-height: 1.15; letter-spacing: -.02em; }
-    h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 16px; }
-    .lead { color: var(--muted); font-size: 1.08rem; max-width: 620px; }
+    .eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--grad); border-radius: 2px; }
+    h1, h2, h3 { line-height: 1.1; letter-spacing: -.025em; }
+    h2 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; margin-bottom: 16px; }
+    .grad-text { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lead { color: var(--muted); font-size: 1.1rem; max-width: 640px; }
     .center { text-align: center; }
     .center .lead { margin: 0 auto; }
+    .center .eyebrow::after { content: ""; width: 22px; height: 2px; background: var(--grad); border-radius: 2px; }
 
     .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 14px 26px; border-radius: 999px; font-weight: 600;
-      transition: transform .15s ease, background .15s ease, border-color .15s ease;
-      border: 1px solid transparent; cursor: pointer; font-size: 1rem; font-family: inherit;
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 15px 28px; border-radius: 999px; font-weight: 700; font-size: 1rem; font-family: inherit;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+      border: 1px solid transparent; cursor: pointer; white-space: nowrap;
     }
     .btn:hover { transform: translateY(-2px); }
-    .btn-primary { background: var(--accent); color: #04121c; }
-    .btn-primary:hover { background: #7dd3fc; }
-    .btn-ghost { border-color: var(--line); color: var(--text); background: transparent; }
+    .btn-primary { background: var(--grad); color: #050a10; box-shadow: 0 10px 30px -10px rgba(34, 211, 238, .6); }
+    .btn-primary:hover { box-shadow: 0 16px 40px -10px rgba(129, 140, 248, .7); }
+    .btn-wa { background: var(--wa); color: #04170b; box-shadow: 0 10px 30px -10px rgba(37, 211, 102, .7); }
+    .btn-wa:hover { background: #3ee07b; }
+    .btn-ghost { border-color: var(--line); background: rgba(255, 255, 255, .03); color: var(--text); }
     .btn-ghost:hover { border-color: var(--accent); }
+    .btn svg { flex-shrink: 0; }
 
     /* Header */
-    header {
-      position: fixed; inset: 0 0 auto 0; z-index: 50;
-      transition: background .25s ease, border-color .25s ease;
-      border-bottom: 1px solid transparent;
-    }
-    header.scrolled { background: rgba(11, 15, 20, .88); backdrop-filter: blur(12px); border-color: var(--line); }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-    .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.15rem; }
+    header { position: fixed; inset: 0 0 auto 0; z-index: 60; transition: background .25s, border-color .25s; border-bottom: 1px solid transparent; }
+    header.scrolled { background: rgba(7, 9, 13, .82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-color: var(--line); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 74px; }
+    .logo { display: flex; align-items: center; gap: 11px; font-weight: 800; font-size: 1.12rem; }
     .logo-mark {
-      width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center;
-      background: linear-gradient(135deg, var(--accent), #6366f1); color: #04121c; font-size: .95rem;
+      width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+      background: var(--grad); color: #050a10; font-weight: 900; font-size: .95rem;
+      box-shadow: 0 6px 20px -6px rgba(34, 211, 238, .7);
     }
-    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links { display: flex; gap: 30px; align-items: center; }
     .nav-links a:not(.btn) { color: var(--muted); font-weight: 500; transition: color .15s; }
     .nav-links a:not(.btn):hover { color: var(--text); }
-    .nav-links .btn { padding: 10px 20px; }
+    .nav-links .btn { padding: 10px 20px; font-size: .95rem; }
     .menu-btn { display: none; background: none; border: 0; color: var(--text); cursor: pointer; padding: 8px; }
 
     /* Hero */
-    .hero {
-      min-height: 100vh; display: flex; align-items: center; padding-top: 72px; position: relative; overflow: hidden;
-      background:
-        radial-gradient(900px 500px at 85% 20%, rgba(56, 189, 248, .18), transparent 60%),
-        radial-gradient(700px 500px at 0% 100%, rgba(99, 102, 241, .14), transparent 60%),
-        var(--bg);
+    .hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 0 80px; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+    .blob { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .55; animation: float 14s ease-in-out infinite; }
+    .blob.b1 { width: 520px; height: 520px; background: #0891b2; top: -120px; right: -80px; }
+    .blob.b2 { width: 460px; height: 460px; background: #4f46e5; bottom: -160px; left: -120px; animation-delay: -5s; }
+    .blob.b3 { width: 300px; height: 300px; background: #db2777; top: 40%; left: 45%; opacity: .25; animation-delay: -9s; }
+    @keyframes float { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(30px, -30px) scale(1.08); } }
+    .hero-bg::after {
+      content: ""; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 48px 48px; mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
     }
-    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
-    .hero h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 800; margin-bottom: 20px; }
-    .hero h1 span {
-      background: linear-gradient(90deg, var(--accent), #a5b4fc);
-      -webkit-background-clip: text; background-clip: text; color: transparent;
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 10px; padding: 7px 16px 7px 8px; border-radius: 999px;
+      background: rgba(255, 255, 255, .05); border: 1px solid var(--line); font-size: .88rem; color: var(--muted); margin-bottom: 26px;
     }
-    .hero .lead { margin-bottom: 32px; }
+    .pill b { white-space: nowrap; background: var(--wa); color: #04170b; border-radius: 999px; padding: 2px 10px; font-size: .75rem; }
+    .hero h1 { font-size: clamp(2.6rem, 6.6vw, 4.9rem); font-weight: 900; margin-bottom: 22px; }
+    .hero .lead { margin-bottom: 34px; }
     .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
-    .hero-stats { display: flex; gap: 40px; margin-top: 48px; flex-wrap: wrap; }
-    .hero-stats strong { display: block; font-size: 1.8rem; font-weight: 800; }
-    .hero-stats span { color: var(--muted); font-size: .9rem; }
-    .hero-art {
-      aspect-ratio: 1 / 1; border-radius: 28px; border: 1px solid var(--line);
-      background: linear-gradient(160deg, #142233, #0d141d); display: grid; place-items: center; position: relative;
-      box-shadow: 0 40px 80px -30px rgba(56, 189, 248, .35);
+    .trust { display: flex; align-items: center; gap: 14px; margin-top: 40px; color: var(--muted); font-size: .92rem; }
+    .stars { color: #fbbf24; letter-spacing: 2px; }
+    .avatars { display: flex; }
+    .avatars span {
+      width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--bg); margin-left: -10px;
+      display: grid; place-items: center; font-weight: 700; font-size: .8rem; color: #050a10;
     }
-    .hero-art svg { width: 84%; }
-    .shine { animation: shine 4s ease-in-out infinite; }
-    @keyframes shine { 0%, 100% { opacity: .2; } 50% { opacity: .9; } }
+    .avatars span:first-child { margin-left: 0; }
 
-    /* Services */
-    .services { background: var(--bg-alt); }
+    .hero-art { position: relative; aspect-ratio: 1 / 1; }
+    .hero-card {
+      position: absolute; inset: 0; border-radius: 32px; border: 1px solid var(--line);
+      background: linear-gradient(160deg, rgba(23, 34, 49, .9), rgba(10, 14, 20, .9)); display: grid; place-items: center; overflow: hidden;
+      box-shadow: 0 50px 100px -40px rgba(34, 211, 238, .45);
+    }
+    .hero-card::before {
+      content: ""; position: absolute; width: 160%; height: 60px; background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+      transform: rotate(-30deg); animation: sweep 4.5s ease-in-out infinite;
+    }
+    @keyframes sweep { 0% { translate: -60% -200px; } 60%, 100% { translate: 60% 200px; } }
+    .hero-card svg { width: 86%; position: relative; }
+    .float-chip {
+      position: absolute; display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 14px;
+      background: rgba(18, 26, 36, .92); border: 1px solid var(--line); backdrop-filter: blur(8px); font-size: .88rem; font-weight: 600;
+      box-shadow: 0 20px 40px -20px rgba(0, 0, 0, .8); animation: bob 5s ease-in-out infinite;
+    }
+    .float-chip small { display: block; color: var(--muted); font-weight: 500; font-size: .75rem; }
+    .float-chip .dot { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; }
+    .chip-1 { top: 8%; left: -6%; }
+    .chip-2 { bottom: 10%; right: -5%; animation-delay: -2.5s; }
+    @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .sparkle { animation: twinkle 3s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+    .sparkle:nth-child(2) { animation-delay: -1s; } .sparkle:nth-child(3) { animation-delay: -2s; }
+    @keyframes twinkle { 0%, 100% { opacity: .15; transform: scale(.6); } 50% { opacity: 1; transform: scale(1); } }
+
+    /* Marquee */
+    .marquee { border-block: 1px solid var(--line); background: var(--bg-alt); overflow: hidden; padding: 20px 0; }
+    .marquee-track { display: flex; gap: 48px; width: max-content; animation: scroll 32s linear infinite; }
+    .marquee span { display: flex; align-items: center; gap: 48px; font-weight: 700; font-size: 1.05rem; color: var(--muted); white-space: nowrap; }
+    .marquee span::after { content: "✦"; color: var(--accent); }
+    @keyframes scroll { to { transform: translateX(-50%); } }
+
+    /* Stats */
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: -1px; }
+    .stat { text-align: center; padding: 34px 16px; }
+    .stat strong { display: block; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; }
+    .stat span { color: var(--muted); font-size: .95rem; }
+
+    /* Cards */
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 56px; }
     .card {
-      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
-      padding: 30px; transition: transform .2s ease, border-color .2s ease;
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; position: relative;
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
     }
-    .card:hover { transform: translateY(-4px); border-color: rgba(56, 189, 248, .5); }
+    .card:hover { transform: translateY(-6px); border-color: rgba(34, 211, 238, .45); box-shadow: 0 30px 60px -30px rgba(34, 211, 238, .35); }
     .icon {
-      width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center;
-      background: rgba(56, 189, 248, .12); color: var(--accent); margin-bottom: 20px;
+      width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; margin-bottom: 20px;
+      background: linear-gradient(135deg, rgba(34, 211, 238, .18), rgba(129, 140, 248, .18)); color: var(--accent);
+      border: 1px solid rgba(34, 211, 238, .25);
     }
-    .card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+    .card h3 { font-size: 1.22rem; margin-bottom: 10px; }
     .card p { color: var(--muted); }
+    .services { background: var(--bg-alt); }
+
+    /* Before / after */
+    .ba-wrap { display: grid; grid-template-columns: .85fr 1.15fr; gap: 56px; align-items: center; }
+    .ba-list { list-style: none; display: grid; gap: 14px; margin-top: 28px; }
+    .ba-list li { display: flex; gap: 12px; align-items: flex-start; color: var(--muted); }
+    .ba-list li b { color: var(--text); }
+    .tick { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: rgba(34, 211, 238, .15); color: var(--accent); display: grid; place-items: center; font-size: .8rem; font-weight: 800; margin-top: 2px; }
+    .ba {
+      position: relative; aspect-ratio: 4 / 3; border-radius: 24px; overflow: hidden; border: 1px solid var(--line);
+      user-select: none; touch-action: pan-y; --pos: 50%;
+    }
+    .ba-layer { position: absolute; inset: 0; display: grid; place-items: center; }
+    .ba-layer svg { width: 88%; }
+    .ba-before { background: linear-gradient(160deg, #2a2620, #15130f); }
+    .ba-before svg { filter: grayscale(.85) brightness(.62) sepia(.35); }
+    .ba-after { background: linear-gradient(160deg, #10263a, #0a1119); clip-path: inset(0 0 0 var(--pos)); }
+    .ba-handle { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 3px; background: #fff; transform: translateX(-50%); pointer-events: none; box-shadow: 0 0 20px rgba(255,255,255,.6); }
+    .ba-handle::after {
+      content: "⟷"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 48px; height: 48px; border-radius: 50%; background: #fff; color: #07090d; display: grid; place-items: center; font-weight: 900; font-size: 1.2rem;
+    }
+    .ba-tag { position: absolute; top: 16px; padding: 6px 12px; border-radius: 999px; font-size: .75rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; background: rgba(0,0,0,.55); }
+    .ba-tag.l { left: 16px; } .ba-tag.r { right: 16px; color: var(--accent); }
+    .ba input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
 
     /* Packages */
-    .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 56px; align-items: stretch; }
-    .pkg { display: flex; flex-direction: column; position: relative; }
-    .pkg.featured { border-color: var(--accent); background: linear-gradient(180deg, rgba(56, 189, 248, .1), var(--card) 40%); }
-    .badge {
-      position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
-      background: var(--accent); color: #04121c; font-size: .75rem; font-weight: 700;
-      padding: 5px 14px; border-radius: 999px; letter-spacing: .05em; text-transform: uppercase;
+    .packages { background: var(--bg-alt); }
+    .toggle { display: inline-flex; padding: 5px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); margin-top: 28px; }
+    .toggle button {
+      border: 0; background: transparent; color: var(--muted); font: inherit; font-weight: 700; font-size: .92rem;
+      padding: 10px 22px; border-radius: 999px; cursor: pointer; transition: background .2s, color .2s;
     }
-    .price { font-size: 2.6rem; font-weight: 800; margin: 14px 0 4px; }
-    .price small { font-size: 1rem; color: var(--muted); font-weight: 500; }
-    .pkg ul { list-style: none; margin: 22px 0 28px; display: grid; gap: 12px; flex: 1; }
+    .toggle button.active { background: var(--grad); color: #050a10; }
+    .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 48px; align-items: stretch; }
+    .pkg { display: flex; flex-direction: column; }
+    .pkg.featured { border: 1px solid transparent; background: linear-gradient(var(--card-2), var(--card-2)) padding-box, var(--grad) border-box; transform: scale(1.03); }
+    .pkg.featured:hover { transform: scale(1.03) translateY(-6px); }
+    .badge {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--grad); color: #050a10;
+      font-size: .74rem; font-weight: 800; padding: 6px 16px; border-radius: 999px; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap;
+    }
+    .price { font-size: 3rem; font-weight: 900; margin: 14px 0 2px; letter-spacing: -.03em; }
+    .price small { font-size: 1rem; color: var(--muted); font-weight: 500; letter-spacing: 0; }
+    .duration { color: var(--accent); font-size: .85rem; font-weight: 600; }
+    .pkg ul { list-style: none; margin: 22px 0 28px; display: grid; gap: 11px; flex: 1; }
     .pkg li { display: flex; gap: 10px; color: var(--muted); }
-    .pkg li::before { content: "✓"; color: var(--accent); font-weight: 700; }
-    .pkg .btn { justify-content: center; }
-    .note { color: var(--muted); font-size: .9rem; margin-top: 28px; }
+    .pkg li::before { content: "✓"; color: var(--accent); font-weight: 800; }
+    .pkg .btn { width: 100%; }
+    .note { color: var(--muted); font-size: .9rem; margin-top: 30px; }
 
-    /* Process */
-    .process { background: var(--bg-alt); }
+    /* Add-ons */
+    .addons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 48px; }
+    .addon { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 22px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); }
+    .addon b { color: var(--accent); white-space: nowrap; }
+
+    /* Steps */
     .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 56px; counter-reset: step; }
-    .step { padding: 28px; border-left: 2px solid var(--line); }
+    .step { padding: 30px; border-radius: var(--radius); background: var(--card); border: 1px solid var(--line); }
     .step::before {
-      counter-increment: step; content: "0" counter(step);
-      display: block; font-size: 2rem; font-weight: 800; color: var(--accent); margin-bottom: 10px;
+      counter-increment: step; content: "0" counter(step); display: block; font-size: 2.4rem; font-weight: 900; margin-bottom: 10px;
+      background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
     }
     .step h3 { margin-bottom: 8px; }
     .step p { color: var(--muted); }
 
     /* Reviews */
-    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 56px; }
-    .stars { color: #facc15; letter-spacing: 2px; margin-bottom: 14px; }
-    .review p { color: var(--text); margin-bottom: 18px; }
-    .review cite { color: var(--muted); font-style: normal; font-size: .92rem; }
+    .reviews { background: var(--bg-alt); }
+    .review p { color: var(--text); margin: 14px 0 22px; font-size: 1.02rem; }
+    .reviewer { display: flex; align-items: center; gap: 12px; }
+    .reviewer .av { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; color: #050a10; }
+    .reviewer small { display: block; color: var(--muted); }
 
     /* FAQ */
-    .faq { background: var(--bg-alt); }
-    .faq-list { max-width: 780px; margin: 48px auto 0; display: grid; gap: 12px; }
-    details { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; }
-    summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+    .faq-list { max-width: 800px; margin: 48px auto 0; display: grid; gap: 12px; }
+    details { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 24px; transition: border-color .2s; }
+    details[open] { border-color: rgba(34, 211, 238, .45); }
+    summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 16px; font-size: 1.03rem; }
     summary::-webkit-details-marker { display: none; }
-    summary::after { content: "+"; color: var(--accent); font-size: 1.4rem; line-height: 1; }
-    details[open] summary::after { content: "–"; }
+    summary::after { content: "+"; color: var(--accent); font-size: 1.5rem; line-height: 1; transition: transform .2s; }
+    details[open] summary::after { transform: rotate(45deg); }
     details p { color: var(--muted); margin-top: 12px; }
 
+    /* CTA band */
+    .cta-band {
+      border-radius: 28px; padding: 60px 40px; text-align: center; position: relative; overflow: hidden;
+      background: radial-gradient(600px 300px at 20% 0%, rgba(34, 211, 238, .3), transparent 70%), radial-gradient(600px 300px at 80% 100%, rgba(244, 114, 182, .25), transparent 70%), var(--card);
+      border: 1px solid var(--line);
+    }
+    .cta-band h2 { margin-bottom: 12px; }
+    .cta-band .hero-cta { justify-content: center; margin-top: 30px; }
+
     /* Contact */
-    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; margin-top: 8px; }
-    .contact-info { display: grid; gap: 18px; margin-top: 32px; }
-    .contact-item { display: flex; gap: 14px; align-items: center; }
-    .contact-item .icon { margin: 0; flex-shrink: 0; }
-    .contact-item span { display: block; color: var(--muted); font-size: .85rem; }
-    form { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; display: grid; gap: 16px; }
+    .contact { background: var(--bg-alt); }
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; }
+    .contact-info { display: grid; gap: 14px; margin-top: 32px; }
+    .contact-item { display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 14px; border: 1px solid transparent; transition: border-color .2s, background .2s; }
+    a.contact-item:hover { border-color: var(--line); background: var(--card); }
+    .contact-item .icon { margin: 0; flex-shrink: 0; width: 46px; height: 46px; }
+    .contact-item .icon.wa { background: rgba(37, 211, 102, .15); color: var(--wa); border-color: rgba(37, 211, 102, .3); }
+    .contact-item span { display: block; color: var(--muted); font-size: .84rem; }
+    .contact-item div:last-child { font-weight: 600; }
+    form { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 34px; display: grid; gap: 16px; }
+    form h3 { font-size: 1.4rem; }
+    form > p { color: var(--muted); margin-top: -8px; font-size: .95rem; }
     .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    label { font-size: .88rem; font-weight: 500; color: var(--muted); display: grid; gap: 6px; }
+    label { font-size: .86rem; font-weight: 600; color: var(--muted); display: grid; gap: 7px; }
     input, select, textarea {
       width: 100%; background: var(--bg); border: 1px solid var(--line); color: var(--text);
-      border-radius: 10px; padding: 12px 14px; font: inherit; font-size: 1rem;
+      border-radius: 12px; padding: 13px 14px; font: inherit; font-size: 1rem; transition: border-color .2s, box-shadow .2s;
     }
-    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); }
-    textarea { resize: vertical; min-height: 110px; }
-    form .btn { justify-content: center; }
-    .form-msg { color: var(--accent); font-weight: 500; display: none; }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px rgba(34, 211, 238, .12); }
+    input[type="date"] { color-scheme: dark; }
+    textarea { resize: vertical; min-height: 100px; }
+    .form-actions { display: grid; grid-template-columns: 1.4fr 1fr; gap: 12px; }
+    .form-msg { color: var(--wa); font-weight: 600; font-size: .92rem; min-height: 1.4em; }
 
-    footer { border-top: 1px solid var(--line); padding: 36px 0; color: var(--muted); font-size: .9rem; }
-    .foot { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    footer { border-top: 1px solid var(--line); padding: 44px 0 110px; color: var(--muted); font-size: .92rem; }
+    .foot { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .foot nav { display: flex; gap: 22px; flex-wrap: wrap; }
+    .foot nav a:hover { color: var(--text); }
+
+    /* Floating WhatsApp */
+    .wa-float {
+      position: fixed; right: 22px; bottom: 22px; z-index: 70; width: 62px; height: 62px; border-radius: 50%;
+      background: var(--wa); color: #fff; display: grid; place-items: center; box-shadow: 0 14px 34px -8px rgba(37, 211, 102, .75);
+      transition: transform .2s;
+    }
+    .wa-float:hover { transform: scale(1.08); }
+    .wa-float::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--wa); z-index: -1; animation: ping 2.2s cubic-bezier(0, 0, .2, 1) infinite; }
+    @keyframes ping { 75%, 100% { transform: scale(1.7); opacity: 0; } }
+    .wa-tip {
+      position: absolute; right: 74px; white-space: nowrap; background: #fff; color: #07090d; font-weight: 700; font-size: .88rem;
+      padding: 9px 14px; border-radius: 12px; box-shadow: 0 10px 30px -10px rgba(0,0,0,.6); opacity: 0; transform: translateX(8px); transition: opacity .3s, transform .3s; pointer-events: none;
+    }
+    .wa-float.tip .wa-tip, .wa-float:hover .wa-tip { opacity: 1; transform: none; }
+
+    /* Mobile action bar */
+    .mobile-bar { display: none; }
 
     /* Reveal */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
     .reveal.in { opacity: 1; transform: none; }
+    .d1 { transition-delay: .08s; } .d2 { transition-delay: .16s; } .d3 { transition-delay: .24s; }
     @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; }
       .reveal { opacity: 1; transform: none; transition: none; }
-      .shine { animation: none; }
       html { scroll-behavior: auto; }
     }
 
     /* Responsive */
-    @media (max-width: 960px) {
-      .hero-grid, .contact-grid { grid-template-columns: 1fr; }
-      .hero-art { max-width: 440px; width: 100%; margin: 0 auto; }
-      .grid-3, .packages-grid, .reviews-grid { grid-template-columns: 1fr; max-width: 520px; margin-left: auto; margin-right: auto; }
-      .packages-grid { gap: 32px; }
-      .steps { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 1000px) {
+      .hero-grid, .contact-grid, .ba-wrap { grid-template-columns: 1fr; }
+      .hero-art { max-width: 460px; width: 100%; margin: 0 auto; }
+      .chip-1 { left: 0; } .chip-2 { right: 0; }
+      .grid-3, .packages-grid { grid-template-columns: 1fr; max-width: 540px; margin-left: auto; margin-right: auto; }
+      .packages-grid { gap: 30px; }
+      .pkg.featured, .pkg.featured:hover { transform: none; }
+      .steps, .stats { grid-template-columns: 1fr 1fr; }
+      .addons { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 760px) {
-      section { padding: 72px 0; }
+      section { padding: 76px 0; }
       .wrap { padding: 0 16px; }
       .menu-btn { display: block; }
       .nav-links {
-        position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; gap: 0;
-        background: rgba(11, 15, 20, .97); border-bottom: 1px solid var(--line);
-        max-height: 0; overflow: hidden; transition: max-height .3s ease;
+        position: absolute; top: 74px; left: 0; right: 0; flex-direction: column; gap: 0;
+        background: rgba(7, 9, 13, .98); border-bottom: 1px solid var(--line); max-height: 0; overflow: hidden; transition: max-height .3s ease;
       }
-      .nav-links.open { max-height: 420px; }
+      .nav-links.open { max-height: 460px; }
       .nav-links a { padding: 16px 20px; width: 100%; text-align: center; }
-      .nav-links .btn { margin: 8px 20px 20px; width: calc(100% - 40px); justify-content: center; }
-      header:has(.nav-links.open) { background: rgba(11, 15, 20, .97); }
-      .steps, .row { grid-template-columns: 1fr; }
-      .hero-stats { gap: 28px; }
+      .nav-links .btn { margin: 8px 20px 20px; width: calc(100% - 40px); }
+      header:has(.nav-links.open) { background: rgba(7, 9, 13, .98); }
+      .hero { padding-top: 104px; }
+      .hero-cta .btn { flex: 1 1 100%; }
+      .pill { font-size: .8rem; }
+      .float-chip { font-size: .78rem; padding: 9px 12px; }
+      .float-chip .dot { width: 28px; height: 28px; }
+      .steps, .row, .addons, .form-actions { grid-template-columns: 1fr; }
+      .stats { gap: 0; }
+      .stat { padding: 22px 8px; }
       form { padding: 22px; }
+      .cta-band { padding: 44px 20px; }
+      .toggle button { padding: 9px 16px; }
+      .wa-float { display: none; }
+      .mobile-bar {
+        display: grid; grid-template-columns: 1fr 1.4fr; gap: 10px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
+        padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(7, 9, 13, .92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+        border-top: 1px solid var(--line);
+      }
+      .mobile-bar .btn { padding: 13px 10px; font-size: .95rem; }
     }
   </style>
 </head>
 <body>
 
-  <header id="top">
+  <header>
     <div class="wrap nav">
       <a href="#" class="logo"><span class="logo-mark">TM</span> TM Auto Detailing</a>
       <button class="menu-btn" aria-label="Open menu" aria-expanded="false" id="menuBtn">
@@ -230,131 +391,192 @@
       </button>
       <nav class="nav-links" id="navLinks">
         <a href="#services">Services</a>
-        <a href="#packages">Packages</a>
+        <a href="#results">Results</a>
+        <a href="#packages">Pricing</a>
         <a href="#reviews">Reviews</a>
         <a href="#faq">FAQ</a>
-        <a href="#contact" class="btn btn-primary">Book Now</a>
+        <a href="#" class="btn btn-wa js-wa" data-msg="Hi TM Auto Detailing! I'd like to book a detail.">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><use href="#wa-icon"/></svg> Book on WhatsApp
+        </a>
       </nav>
     </div>
   </header>
 
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="wa-icon" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.6.1c-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 12 2.2a9.8 9.8 0 0 1 0 19.6zM12 .2A11.8 11.8 0 0 0 1.8 17.9L.1 24l6.3-1.6A11.8 11.8 0 1 0 12 .2z"/></symbol>
+    <symbol id="car" viewBox="0 0 400 260">
+      <ellipse cx="200" cy="224" rx="172" ry="14" fill="#000" opacity=".5"/>
+      <path d="M38 182c0-18 10-30 30-34l52-10 42-40c10-9 22-14 36-14h70c16 0 30 7 40 19l30 36 34 8c14 3 24 15 24 29v14c0 8-6 14-14 14H52c-8 0-14-6-14-14z" fill="url(#carBody)"/>
+      <path d="M140 136l31-29c7-6 15-10 25-10h34v39zM242 97h30c11 0 21 5 28 14l20 25h-78z" fill="url(#carGlass)"/>
+      <path d="M150 128l20-18M252 104l12 0" stroke="#fff" stroke-opacity=".35" stroke-width="3" stroke-linecap="round"/>
+      <path d="M68 162h272" stroke="#fff" stroke-opacity=".45" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M90 150c60-8 160-8 230 0" stroke="#fff" stroke-opacity=".18" stroke-width="10" stroke-linecap="round"/>
+      <circle cx="110" cy="202" r="29" fill="#05070a"/><circle cx="110" cy="202" r="16" fill="url(#rim)"/><circle cx="110" cy="202" r="5" fill="#0b0f14"/>
+      <circle cx="302" cy="202" r="29" fill="#05070a"/><circle cx="302" cy="202" r="16" fill="url(#rim)"/><circle cx="302" cy="202" r="5" fill="#0b0f14"/>
+      <rect x="352" y="162" width="22" height="8" rx="4" fill="#fef9c3"/>
+      <rect x="36" y="166" width="12" height="8" rx="4" fill="#f43f5e"/>
+    </symbol>
+    <defs>
+      <linearGradient id="carBody" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".55" stop-color="#818cf8"/><stop offset="1" stop-color="#f472b6"/></linearGradient>
+      <linearGradient id="carGlass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05070a" stop-opacity=".95"/><stop offset="1" stop-color="#1e293b"/></linearGradient>
+      <radialGradient id="rim"><stop offset="0" stop-color="#e2e8f0"/><stop offset="1" stop-color="#64748b"/></radialGradient>
+    </defs>
+  </svg>
+
   <main>
     <!-- Hero -->
     <section class="hero">
+      <div class="hero-bg" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
       <div class="wrap hero-grid">
-        <div class="reveal">
-          <p class="eyebrow">Professional Car Detailing</p>
-          <h1>Showroom shine, <span>every single time.</span></h1>
-          <p class="lead">TM Auto Detailing brings your car back to life inside and out — from a deep interior clean to paint correction and long-lasting ceramic protection.</p>
-          <div class="hero-cta">
-            <a href="#contact" class="btn btn-primary">Book Your Detail →</a>
-            <a href="#packages" class="btn btn-ghost">View Packages</a>
+        <div>
+          <div class="pill reveal"><b>NOW BOOKING</b> Mobile detailing — we come to you</div>
+          <h1 class="reveal d1">Your car, <br><span class="grad-text">better than new.</span></h1>
+          <p class="lead reveal d2">Deep interior cleans, flawless paint and ceramic protection that lasts for years. TM Auto Detailing brings the showroom to your driveway.</p>
+          <div class="hero-cta reveal d3">
+            <a href="#" class="btn btn-wa js-wa" data-msg="Hi TM Auto Detailing! I'd like to book a detail.">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><use href="#wa-icon"/></svg> Book on WhatsApp
+            </a>
+            <a href="#packages" class="btn btn-ghost">See Pricing →</a>
           </div>
-          <div class="hero-stats">
-            <div><strong>100%</strong><span>Satisfaction focus</span></div>
-            <div><strong>Mobile</strong><span>We come to you</span></div>
-            <div><strong>Pro</strong><span>Grade products</span></div>
+          <div class="trust reveal d3">
+            <div class="avatars">
+              <span style="background:#22d3ee">A</span><span style="background:#818cf8">J</span><span style="background:#f472b6">S</span><span style="background:#fbbf24">M</span>
+            </div>
+            <div><span class="stars">★★★★★</span><br>Loved by local drivers</div>
           </div>
         </div>
-        <div class="hero-art reveal" aria-hidden="true">
-          <svg viewBox="0 0 400 260" fill="none">
-            <defs>
-              <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#38bdf8"/>
-                <stop offset="1" stop-color="#6366f1"/>
-              </linearGradient>
-              <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#0b0f14" stop-opacity=".9"/>
-                <stop offset="1" stop-color="#1e293b"/>
-              </linearGradient>
-            </defs>
-            <ellipse cx="200" cy="222" rx="170" ry="14" fill="#000" opacity=".45"/>
-            <path d="M40 180c0-18 10-30 30-34l50-10 40-38c10-9 22-14 36-14h70c16 0 30 7 40 19l30 36 34 8c14 3 24 15 24 29v14c0 8-6 14-14 14H54c-8 0-14-6-14-14z" fill="url(#body)"/>
-            <path d="M138 134l30-28c7-6 15-10 25-10h34v38zM239 96h30c11 0 21 5 28 14l20 24h-78z" fill="url(#glass)"/>
-            <circle cx="110" cy="200" r="28" fill="#0b0f14"/><circle cx="110" cy="200" r="14" fill="#64748b"/>
-            <circle cx="300" cy="200" r="28" fill="#0b0f14"/><circle cx="300" cy="200" r="14" fill="#64748b"/>
-            <rect x="350" y="160" width="20" height="8" rx="4" fill="#fef3c7"/>
-            <path d="M70 160h270" stroke="#fff" stroke-opacity=".35" stroke-width="2" stroke-linecap="round"/>
-            <g class="shine" fill="#fff">
-              <path d="M330 40l5 14 14 5-14 5-5 14-5-14-14-5 14-5z"/>
-              <path d="M80 70l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"/>
-              <path d="M210 30l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
-            </g>
-          </svg>
+        <div class="hero-art reveal d2" aria-hidden="true">
+          <div class="hero-card">
+            <svg viewBox="0 0 400 260"><use href="#car"/>
+              <g fill="#fff">
+                <path class="sparkle" d="M330 30l5 14 14 5-14 5-5 14-5-14-14-5 14-5z"/>
+                <path class="sparkle" d="M70 60l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"/>
+                <path class="sparkle" d="M215 22l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/>
+              </g>
+            </svg>
+          </div>
+          <div class="float-chip chip-1"><span class="dot" style="background:rgba(37,211,102,.18);color:#25d366"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><use href="#wa-icon"/></svg></span><div>Booked in 60s<small>via WhatsApp</small></div></div>
+          <div class="float-chip chip-2"><span class="dot" style="background:rgba(34,211,238,.15);color:#22d3ee">✦</span><div>Ceramic protected<small>Up to 5 years</small></div></div>
         </div>
       </div>
     </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Interior Deep Clean</span><span>Paint Correction</span><span>Ceramic Coating</span><span>Hand Wash</span><span>Headlight Restoration</span><span>Pet Hair Removal</span><span>Engine Bay</span><span>Odour Removal</span>
+        <span>Interior Deep Clean</span><span>Paint Correction</span><span>Ceramic Coating</span><span>Hand Wash</span><span>Headlight Restoration</span><span>Pet Hair Removal</span><span>Engine Bay</span><span>Odour Removal</span>
+      </div>
+    </div>
+
+    <div class="wrap stats">
+      <div class="stat reveal"><strong class="grad-text" data-count="500" data-suffix="+">0</strong><span>Cars detailed</span></div>
+      <div class="stat reveal d1"><strong class="grad-text" data-count="5" data-suffix="★">0</strong><span>Average rating</span></div>
+      <div class="stat reveal d2"><strong class="grad-text" data-count="100" data-suffix="%">0</strong><span>Mobile service</span></div>
+      <div class="stat reveal d3"><strong class="grad-text" data-count="7" data-suffix=" days">0</strong><span>Happiness guarantee</span></div>
+    </div>
 
     <!-- Services -->
     <section class="services" id="services">
       <div class="wrap">
         <div class="center reveal">
           <p class="eyebrow">What We Do</p>
-          <h2>Detailing services</h2>
-          <p class="lead">Every service is done by hand with professional-grade products that are safe for your paint, trim and interior.</p>
+          <h2>Every detail, <span class="grad-text">obsessed over.</span></h2>
+          <p class="lead">Done by hand with professional-grade products that are safe for your paint, trim and interior.</p>
         </div>
         <div class="grid-3">
           <div class="card reveal">
-            <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15h18M5 15l2-6h10l2 6M6 19v-4M18 19v-4"/></svg></div>
+            <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16a4 4 0 0 1-.9-7.9A5 5 0 0 1 16 7h1a4 4 0 0 1 0 8M8 19v2M12 18v3M16 19v2"/></svg></div>
             <h3>Exterior Detail</h3>
-            <p>Hand wash, wheel and tire clean, clay bar decontamination and a protective sealant for a deep, glossy finish.</p>
+            <p>Foam pre-wash, two-bucket hand wash, wheels and tyres, clay bar decontamination and a glossy protective sealant.</p>
           </div>
-          <div class="card reveal">
+          <div class="card reveal d1">
             <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20v-6a6 6 0 0 1 12 0v6M4 20h16M9 9V5a3 3 0 0 1 6 0v4"/></svg></div>
-            <h3>Interior Detail</h3>
-            <p>Thorough vacuum, steam clean, shampoo of carpets and seats, leather conditioning and streak-free glass.</p>
+            <h3>Interior Deep Clean</h3>
+            <p>Full vacuum, steam clean, carpet and seat shampoo, leather conditioning, vents, door cards and streak-free glass.</p>
           </div>
-          <div class="card reveal">
+          <div class="card reveal d2">
             <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7 7 .5-5.5 4.5 2 7L12 17l-6.5 4 2-7L2 9.5 9 9z"/></svg></div>
             <h3>Paint Correction</h3>
-            <p>Machine polishing to remove swirl marks, light scratches and oxidation, restoring clarity and depth to your paint.</p>
+            <p>Machine polishing removes swirl marks, light scratches and oxidation to restore deep, mirror-like gloss.</p>
           </div>
           <div class="card reveal">
-            <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div>
+            <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
             <h3>Ceramic Coating</h3>
-            <p>Long-lasting protection against UV, road salt and grime, with incredible water beading and easier washes.</p>
+            <p>Years of protection from UV, salt and grime, with insane water beading and far easier washes.</p>
           </div>
-          <div class="card reveal">
+          <div class="card reveal d1">
             <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></div>
             <h3>Headlight Restoration</h3>
-            <p>Remove yellowing and haze from headlights for a cleaner look and better night-time visibility.</p>
+            <p>Strip away yellowing and haze for a sharper look and safer night-time driving.</p>
           </div>
-          <div class="card reveal">
-            <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/></svg></div>
-            <h3>Engine Bay Clean</h3>
-            <p>Safe degreasing and dressing of the engine bay so it looks as good under the hood as it does outside.</p>
+          <div class="card reveal d2">
+            <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l3-8 6 16 3-8h3"/></svg></div>
+            <h3>Maintenance Plans</h3>
+            <p>Keep it perfect with regular maintenance washes at a discounted rate — ask us on WhatsApp.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Before / After -->
+    <section id="results">
+      <div class="wrap ba-wrap">
+        <div class="reveal">
+          <p class="eyebrow">The Difference</p>
+          <h2>Drag to see the <span class="grad-text">transformation.</span></h2>
+          <p class="lead">Faded, dull and dirty to deep, glossy and protected. Here's what a full detail does.</p>
+          <ul class="ba-list">
+            <li><span class="tick">✓</span><div><b>Contaminants removed</b> — tar, iron fallout and road grime gone.</div></li>
+            <li><span class="tick">✓</span><div><b>Gloss restored</b> — swirls polished out for a true mirror finish.</div></li>
+            <li><span class="tick">✓</span><div><b>Protection locked in</b> — sealant or ceramic keeps it that way.</div></li>
+          </ul>
+        </div>
+        <div class="ba reveal d1" id="ba">
+          <div class="ba-layer ba-before"><svg viewBox="0 0 400 260"><use href="#car"/>
+            <g fill="#3b2f20" opacity=".7"><circle cx="90" cy="175" r="6"/><circle cx="140" cy="185" r="4"/><circle cx="250" cy="178" r="7"/><circle cx="330" cy="172" r="5"/><circle cx="200" cy="150" r="5"/><circle cx="180" cy="188" r="3"/><circle cx="290" cy="160" r="4"/></g>
+          </svg></div>
+          <div class="ba-layer ba-after"><svg viewBox="0 0 400 260"><use href="#car"/>
+            <g fill="#fff"><path class="sparkle" d="M330 40l5 14 14 5-14 5-5 14-5-14-14-5 14-5z"/><path class="sparkle" d="M260 20l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/></g>
+          </svg></div>
+          <span class="ba-tag l">Before</span><span class="ba-tag r">After</span>
+          <div class="ba-handle"></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Before and after comparison">
+        </div>
+      </div>
+    </section>
+
     <!-- Packages -->
-    <section id="packages">
+    <section class="packages" id="packages">
       <div class="wrap">
         <div class="center reveal">
           <p class="eyebrow">Pricing</p>
-          <h2>Detailing packages</h2>
-          <p class="lead">Simple, upfront packages. Pick the level of care your car needs.</p>
+          <h2>Simple, <span class="grad-text">upfront</span> packages.</h2>
+          <p class="lead">Choose your vehicle size to see prices.</p>
+          <div class="toggle" role="tablist" id="sizeToggle">
+            <button class="active" data-size="0" role="tab">Car</button>
+            <button data-size="1" role="tab">SUV</button>
+            <button data-size="2" role="tab">Truck / Van</button>
+          </div>
         </div>
         <div class="packages-grid">
           <div class="card pkg reveal">
             <h3>Express</h3>
-            <div class="price">$89<small> / sedan</small></div>
-            <p>A quick refresh inside and out.</p>
+            <div class="price">$<span data-prices="89,109,129">89</span></div>
+            <div class="duration">⏱ About 1.5 hours</div>
             <ul>
-              <li>Hand wash &amp; dry</li>
-              <li>Wheels &amp; tires cleaned</li>
+              <li>Foam pre-wash &amp; hand wash</li>
+              <li>Wheels, tyres &amp; arches</li>
               <li>Interior vacuum</li>
               <li>Windows inside &amp; out</li>
               <li>Dash &amp; console wipe-down</li>
             </ul>
-            <a href="#contact" class="btn btn-ghost" data-package="Express">Choose Express</a>
+            <a href="#" class="btn btn-ghost js-wa" data-pkg="Express">Book Express</a>
           </div>
-          <div class="card pkg featured reveal">
-            <span class="badge">Most Popular</span>
+          <div class="card pkg featured reveal d1">
+            <span class="badge">🔥 Most Popular</span>
             <h3>Full Detail</h3>
-            <div class="price">$199<small> / sedan</small></div>
-            <p>Our complete interior and exterior detail.</p>
+            <div class="price">$<span data-prices="199,239,269">199</span></div>
+            <div class="duration">⏱ About 4 hours</div>
             <ul>
               <li>Everything in Express</li>
               <li>Clay bar decontamination</li>
@@ -363,12 +585,12 @@
               <li>Leather clean &amp; condition</li>
               <li>Door jambs &amp; trim dressed</li>
             </ul>
-            <a href="#contact" class="btn btn-primary" data-package="Full Detail">Choose Full Detail</a>
+            <a href="#" class="btn btn-wa js-wa" data-pkg="Full Detail"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><use href="#wa-icon"/></svg> Book Full Detail</a>
           </div>
-          <div class="card pkg reveal">
+          <div class="card pkg reveal d2">
             <h3>Ceramic Pro</h3>
-            <div class="price">$699<small> +</small></div>
-            <p>Correction plus long-term protection.</p>
+            <div class="price">$<span data-prices="699,799,899">699</span><small> +</small></div>
+            <div class="duration">⏱ 1–2 days</div>
             <ul>
               <li>Everything in Full Detail</li>
               <li>One-step paint correction</li>
@@ -376,103 +598,143 @@
               <li>Wheel faces coated</li>
               <li>Glass water repellent</li>
             </ul>
-            <a href="#contact" class="btn btn-ghost" data-package="Ceramic Pro">Choose Ceramic Pro</a>
+            <a href="#" class="btn btn-ghost js-wa" data-pkg="Ceramic Pro">Book Ceramic Pro</a>
           </div>
         </div>
-        <p class="note center">SUVs, trucks and heavily soiled vehicles may cost extra. Contact us for an exact quote.</p>
+
+        <div class="center reveal" style="margin-top:80px">
+          <p class="eyebrow">Add-ons</p>
+          <h3 style="font-size:1.6rem">Make it even better</h3>
+        </div>
+        <div class="addons">
+          <div class="addon reveal">Pet hair removal <b>+$30</b></div>
+          <div class="addon reveal d1">Odour elimination <b>+$40</b></div>
+          <div class="addon reveal d2">Engine bay clean <b>+$40</b></div>
+          <div class="addon reveal">Headlight restoration <b>+$60</b></div>
+          <div class="addon reveal d1">Trim restoration <b>+$35</b></div>
+          <div class="addon reveal d2">Water spot removal <b>+$50</b></div>
+        </div>
+        <p class="note center">Heavily soiled vehicles may cost extra. Message us for an exact quote.</p>
       </div>
     </section>
 
     <!-- Process -->
-    <section class="process">
+    <section>
       <div class="wrap">
         <div class="center reveal">
           <p class="eyebrow">How It Works</p>
-          <h2>Booking is easy</h2>
+          <h2>Booked in <span class="grad-text">under a minute.</span></h2>
         </div>
         <div class="steps">
-          <div class="step reveal"><h3>Request</h3><p>Send us a booking request with your vehicle and the package you want.</p></div>
-          <div class="step reveal"><h3>Confirm</h3><p>We get back to you to confirm the price, date and location.</p></div>
-          <div class="step reveal"><h3>Detail</h3><p>We arrive with everything needed and get to work on your car.</p></div>
-          <div class="step reveal"><h3>Enjoy</h3><p>Inspect the results with us and enjoy that fresh, like-new feeling.</p></div>
+          <div class="step reveal"><h3>Message us</h3><p>Tap any WhatsApp button and tell us your car and package.</p></div>
+          <div class="step reveal d1"><h3>Confirm</h3><p>We reply fast with a price, date and time that suits you.</p></div>
+          <div class="step reveal d2"><h3>We arrive</h3><p>Fully equipped, at your home or workplace — you carry on with your day.</p></div>
+          <div class="step reveal d3"><h3>Drive happy</h3><p>Inspect the results with us. Not happy? We'll make it right.</p></div>
         </div>
       </div>
     </section>
 
     <!-- Reviews -->
-    <section id="reviews">
+    <section class="reviews" id="reviews">
       <div class="wrap">
         <div class="center reveal">
           <p class="eyebrow">Reviews</p>
-          <h2>What customers say</h2>
+          <h2>Drivers <span class="grad-text">love</span> the results.</h2>
         </div>
-        <div class="reviews-grid">
+        <div class="grid-3">
           <div class="card review reveal">
             <div class="stars">★★★★★</div>
             <p>“My car hasn't looked this good since I bought it. The interior smells brand new.”</p>
-            <cite>— Customer review</cite>
+            <div class="reviewer"><span class="av" style="background:#22d3ee">A</span><div>Customer<small>Full Detail</small></div></div>
           </div>
-          <div class="card review reveal">
+          <div class="card review reveal d1">
             <div class="stars">★★★★★</div>
-            <p>“On time, professional and the paint correction got rid of every swirl mark. Highly recommend.”</p>
-            <cite>— Customer review</cite>
+            <p>“On time, professional, and the paint correction got rid of every swirl mark. Highly recommend.”</p>
+            <div class="reviewer"><span class="av" style="background:#818cf8">J</span><div>Customer<small>Ceramic Pro</small></div></div>
           </div>
-          <div class="card review reveal">
+          <div class="card review reveal d2">
             <div class="stars">★★★★★</div>
-            <p>“Super convenient — they came to my driveway. Kids' car seats and all, spotless.”</p>
-            <cite>— Customer review</cite>
+            <p>“Booked on WhatsApp in two minutes and they came to my driveway. Kids' car seats and all — spotless.”</p>
+            <div class="reviewer"><span class="av" style="background:#f472b6">S</span><div>Customer<small>Express</small></div></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="faq" id="faq">
+    <section id="faq">
       <div class="wrap">
         <div class="center reveal">
           <p class="eyebrow">FAQ</p>
-          <h2>Common questions</h2>
+          <h2>Questions? <span class="grad-text">Answered.</span></h2>
         </div>
         <div class="faq-list">
-          <details class="reveal"><summary>How long does a detail take?</summary><p>An Express detail takes about 1–2 hours, a Full Detail 3–5 hours, and ceramic coating packages usually take a full day.</p></details>
-          <details class="reveal"><summary>Do you come to me?</summary><p>Yes — we offer mobile detailing at your home or workplace. Just let us know your address when you book.</p></details>
-          <details class="reveal"><summary>Do I need to provide water or power?</summary><p>Access to an outdoor tap and power outlet is helpful. If that isn't available, mention it when booking and we'll work something out.</p></details>
-          <details class="reveal"><summary>How do I pay?</summary><p>Payment is taken once the job is finished and you're happy with the result. We accept cash, card and e-transfer.</p></details>
-          <details class="reveal"><summary>How long does ceramic coating last?</summary><p>Depending on the coating chosen and how the car is maintained, ceramic coatings last from 2 to 5 years.</p></details>
+          <details class="reveal"><summary>How long does a detail take?</summary><p>Express takes about 1.5 hours, a Full Detail around 4 hours, and ceramic coating packages usually take 1–2 days.</p></details>
+          <details class="reveal"><summary>Do you come to me?</summary><p>Yes — we're fully mobile and come to your home or workplace. Just send your address when you book.</p></details>
+          <details class="reveal"><summary>Do I need to provide water or power?</summary><p>An outdoor tap and power outlet help. If you don't have them, tell us when booking and we'll sort it out.</p></details>
+          <details class="reveal"><summary>How do I pay?</summary><p>You pay when the job is finished and you're happy. We accept cash, card and e-transfer.</p></details>
+          <details class="reveal"><summary>How long does ceramic coating last?</summary><p>Depending on the coating and how the car is maintained, from 2 to 5 years.</p></details>
+          <details class="reveal"><summary>What if it rains?</summary><p>We keep an eye on the forecast and will message you on WhatsApp to reschedule for free if the weather won't cooperate.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA band -->
+    <section style="padding-top:0">
+      <div class="wrap">
+        <div class="cta-band reveal">
+          <h2>Ready for that <span class="grad-text">fresh-car feeling?</span></h2>
+          <p class="lead" style="margin:0 auto">Message us on WhatsApp and we'll get you booked in today.</p>
+          <div class="hero-cta">
+            <a href="#" class="btn btn-wa js-wa" data-msg="Hi TM Auto Detailing! I'd like to book a detail."><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><use href="#wa-icon"/></svg> Chat on WhatsApp</a>
+            <a href="#contact" class="btn btn-ghost">Request a Booking</a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact">
+    <section class="contact" id="contact">
       <div class="wrap contact-grid">
         <div class="reveal">
           <p class="eyebrow">Book Now</p>
-          <h2>Ready for a fresh, clean car?</h2>
-          <p class="lead">Send us a request and we'll get back to you to confirm your appointment.</p>
+          <h2>Let's get your car <span class="grad-text">shining.</span></h2>
+          <p class="lead">Fill in the form and it goes straight to our WhatsApp, or reach us directly.</p>
           <div class="contact-info">
-            <a class="contact-item" href="tel:+10000000000">
-              <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
-              <div><span>Call or text</span>(000) 000-0000</div>
+            <a class="contact-item js-wa" href="#" data-msg="Hi TM Auto Detailing!">
+              <div class="icon wa"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><use href="#wa-icon"/></svg></div>
+              <div><span>WhatsApp (fastest)</span><b class="js-phone-text"></b></div>
             </a>
-            <a class="contact-item" href="mailto:info@tmautodetailing.com">
+            <a class="contact-item js-tel" href="#">
+              <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
+              <div><span>Call or text</span><b class="js-phone-text"></b></div>
+            </a>
+            <a class="contact-item js-mail" href="#">
               <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></div>
-              <div><span>Email</span>info@tmautodetailing.com</div>
+              <div><span>Email</span><b class="js-email-text"></b></div>
             </a>
             <div class="contact-item">
               <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-              <div><span>Hours</span>Mon–Sat · 8am – 7pm</div>
+              <div><span>Hours</span><b class="js-hours-text"></b></div>
             </div>
           </div>
         </div>
-        <form class="reveal" id="bookingForm">
+        <form class="reveal d1" id="bookingForm">
+          <h3>Booking request</h3>
+          <p>Takes 30 seconds. We'll confirm on WhatsApp.</p>
           <div class="row">
             <label>Name<input name="name" required autocomplete="name"></label>
             <label>Phone<input name="phone" type="tel" required autocomplete="tel"></label>
           </div>
-          <label>Email<input name="email" type="email" autocomplete="email"></label>
           <div class="row">
             <label>Vehicle<input name="vehicle" placeholder="e.g. 2021 Honda Civic"></label>
+            <label>Vehicle size
+              <select name="size" id="sizeSelect">
+                <option>Car</option><option>SUV</option><option>Truck / Van</option>
+              </select>
+            </label>
+          </div>
+          <div class="row">
             <label>Package
               <select name="package" id="packageSelect">
                 <option>Express</option>
@@ -481,11 +743,15 @@
                 <option>Not sure — need a quote</option>
               </select>
             </label>
+            <label>Preferred date<input name="date" type="date"></label>
           </div>
-          <label>Preferred date<input name="date" type="date"></label>
-          <label>Message<textarea name="message" placeholder="Anything we should know? (pet hair, stains, location...)"></textarea></label>
-          <button class="btn btn-primary" type="submit">Send Booking Request</button>
-          <p class="form-msg" id="formMsg">Opening your email app to send the request…</p>
+          <label>Address / area<input name="area" placeholder="Where should we come?" autocomplete="street-address"></label>
+          <label>Notes<textarea name="message" placeholder="Pet hair, stains, add-ons you'd like…"></textarea></label>
+          <div class="form-actions">
+            <button class="btn btn-wa" type="submit" data-via="wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><use href="#wa-icon"/></svg> Send on WhatsApp</button>
+            <button class="btn btn-ghost" type="submit" data-via="email">Send by Email</button>
+          </div>
+          <p class="form-msg" id="formMsg" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -494,51 +760,113 @@
   <footer>
     <div class="wrap foot">
       <a href="#" class="logo"><span class="logo-mark">TM</span> TM Auto Detailing</a>
-      <p>© <span id="year"></span> TM Auto Detailing. All rights reserved.</p>
+      <nav><a href="#services">Services</a><a href="#packages">Pricing</a><a href="#faq">FAQ</a><a href="#contact">Book</a></nav>
+      <p>© <span id="year"></span> TM Auto Detailing</p>
     </div>
   </footer>
 
+  <a href="#" class="wa-float js-wa" id="waFloat" data-msg="Hi TM Auto Detailing! I'd like to book a detail." aria-label="Chat on WhatsApp">
+    <span class="wa-tip">Book on WhatsApp 👋</span>
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><use href="#wa-icon"/></svg>
+  </a>
+
+  <div class="mobile-bar">
+    <a href="#" class="btn btn-ghost js-tel">📞 Call</a>
+    <a href="#" class="btn btn-wa js-wa" data-msg="Hi TM Auto Detailing! I'd like to book a detail."><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><use href="#wa-icon"/></svg> WhatsApp</a>
+  </div>
+
   <script>
-    const BOOKING_EMAIL = "info@tmautodetailing.com";
+    /* ===== EDIT YOUR DETAILS HERE ===== */
+    const CONFIG = {
+      whatsapp: "10000000000",            // WhatsApp number: country code + number, digits only (e.g. 14165551234)
+      phone: "+10000000000",              // Phone number for the Call button
+      phoneDisplay: "(000) 000-0000",     // How the phone number is shown on the page
+      email: "info@tmautodetailing.com",
+      hours: "Mon–Sat · 8am – 7pm"
+    };
+    /* ================================== */
 
-    const header = document.querySelector("header");
-    const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 20);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
+    const waLink = msg => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+    const sizes = ["car", "SUV", "truck / van"];
+    let size = 0;
 
-    const menuBtn = document.getElementById("menuBtn");
-    const navLinks = document.getElementById("navLinks");
-    menuBtn.addEventListener("click", () => {
-      const open = navLinks.classList.toggle("open");
-      menuBtn.setAttribute("aria-expanded", open);
+    document.querySelectorAll(".js-wa").forEach(a => {
+      a.target = "_blank"; a.rel = "noopener";
+      const update = () => {
+        a.href = waLink(a.dataset.pkg
+          ? `Hi TM Auto Detailing! I'd like to book the ${a.dataset.pkg} package for my ${sizes[size]}.`
+          : a.dataset.msg);
+      };
+      a._update = update; update();
     });
-    navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
-      navLinks.classList.remove("open");
-      menuBtn.setAttribute("aria-expanded", "false");
-    }));
-
-    const packageSelect = document.getElementById("packageSelect");
-    document.querySelectorAll("[data-package]").forEach(btn =>
-      btn.addEventListener("click", () => { packageSelect.value = btn.dataset.package; })
-    );
-
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
-    }, { threshold: 0.12 });
-    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
-
+    document.querySelectorAll(".js-tel").forEach(a => a.href = `tel:${CONFIG.phone}`);
+    document.querySelectorAll(".js-mail").forEach(a => a.href = `mailto:${CONFIG.email}`);
+    document.querySelectorAll(".js-phone-text").forEach(el => el.textContent = CONFIG.phoneDisplay);
+    document.querySelectorAll(".js-email-text").forEach(el => el.textContent = CONFIG.email);
+    document.querySelectorAll(".js-hours-text").forEach(el => el.textContent = CONFIG.hours);
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    document.getElementById("bookingForm").addEventListener("submit", e => {
+    // Header + menu
+    const header = document.querySelector("header");
+    const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+    const menuBtn = document.getElementById("menuBtn"), navLinks = document.getElementById("navLinks");
+    menuBtn.addEventListener("click", () => menuBtn.setAttribute("aria-expanded", navLinks.classList.toggle("open")));
+    navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => { navLinks.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); }));
+
+    // Vehicle size toggle
+    const sizeSelect = document.getElementById("sizeSelect");
+    document.querySelectorAll("#sizeToggle button").forEach(btn => btn.addEventListener("click", () => {
+      document.querySelectorAll("#sizeToggle button").forEach(b => b.classList.toggle("active", b === btn));
+      size = +btn.dataset.size;
+      document.querySelectorAll("[data-prices]").forEach(el => el.textContent = el.dataset.prices.split(",")[size]);
+      document.querySelectorAll(".js-wa[data-pkg]").forEach(a => a._update());
+      sizeSelect.selectedIndex = size;
+    }));
+
+    // Before / after slider
+    const ba = document.getElementById("ba");
+    ba.querySelector("input").addEventListener("input", e => ba.style.setProperty("--pos", e.target.value + "%"));
+
+    // Reveal + counters
+    const countUp = el => {
+      const end = +el.dataset.count, suffix = el.dataset.suffix || "", t0 = performance.now(), dur = 1400;
+      const tick = t => { const p = Math.min((t - t0) / dur, 1); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + suffix; if (p < 1) requestAnimationFrame(tick); };
+      requestAnimationFrame(tick);
+    };
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("in");
+      e.target.querySelectorAll("[data-count]").forEach(countUp);
+      io.unobserve(e.target);
+    }), { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+    // WhatsApp tooltip nudge
+    const waFloat = document.getElementById("waFloat");
+    setTimeout(() => { waFloat.classList.add("tip"); setTimeout(() => waFloat.classList.remove("tip"), 5000); }, 4000);
+
+    // Booking form → WhatsApp or email
+    const form = document.getElementById("bookingForm");
+    form.addEventListener("submit", e => {
       e.preventDefault();
-      const d = Object.fromEntries(new FormData(e.target));
-      const body = [
-        `Name: ${d.name}`, `Phone: ${d.phone}`, `Email: ${d.email || "-"}`,
-        `Vehicle: ${d.vehicle || "-"}`, `Package: ${d.package}`, `Preferred date: ${d.date || "-"}`,
-        "", d.message || ""
-      ].join("\n");
-      document.getElementById("formMsg").style.display = "block";
-      window.location.href = `mailto:${BOOKING_EMAIL}?subject=${encodeURIComponent("Booking request – " + d.package)}&body=${encodeURIComponent(body)}`;
+      const via = e.submitter ? e.submitter.dataset.via : "wa";
+      const d = Object.fromEntries(new FormData(form));
+      const text = [
+        "Hi TM Auto Detailing! I'd like to book a detail.", "",
+        `Name: ${d.name}`, `Phone: ${d.phone}`,
+        `Vehicle: ${d.vehicle || "-"} (${d.size})`, `Package: ${d.package}`,
+        `Preferred date: ${d.date || "-"}`, `Area: ${d.area || "-"}`,
+        d.message ? `Notes: ${d.message}` : ""
+      ].filter(Boolean).join("\n");
+      const msg = document.getElementById("formMsg");
+      if (via === "email") {
+        msg.textContent = "Opening your email app…";
+        location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent("Booking request – " + d.package)}&body=${encodeURIComponent(text)}`;
+      } else {
+        msg.textContent = "Opening WhatsApp — just hit send! ✅";
+        window.open(waLink(text), "_blank", "noopener");
+      }
     });
   </script>
 </body>
