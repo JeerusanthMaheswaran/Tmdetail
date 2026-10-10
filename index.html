@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TM Auto Detailing</title>
+  <meta name="description" content="TM Auto Detailing — professional interior and exterior car detailing, paint correction and ceramic coating. Book your detail today.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f14'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' text-anchor='middle' fill='%2338bdf8'%3ETM%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-alt: #111821;
+      --card: #151e29;
+      --line: #223042;
+      --text: #e8eef5;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2: #0ea5e9;
+      --radius: 16px;
+      --max: 1140px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; max-width: 100%; }
+    .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    section { padding: 96px 0; }
+    .eyebrow {
+      color: var(--accent); font-weight: 600; font-size: .8rem;
+      letter-spacing: .14em; text-transform: uppercase; margin-bottom: 12px;
+    }
+    h1, h2, h3 { line-height: 1.15; letter-spacing: -.02em; }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 16px; }
+    .lead { color: var(--muted); font-size: 1.08rem; max-width: 620px; }
+    .center { text-align: center; }
+    .center .lead { margin: 0 auto; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 26px; border-radius: 999px; font-weight: 600;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      border: 1px solid transparent; cursor: pointer; font-size: 1rem; font-family: inherit;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--accent); color: #04121c; }
+    .btn-primary:hover { background: #7dd3fc; }
+    .btn-ghost { border-color: var(--line); color: var(--text); background: transparent; }
+    .btn-ghost:hover { border-color: var(--accent); }
+
+    /* Header */
+    header {
+      position: fixed; inset: 0 0 auto 0; z-index: 50;
+      transition: background .25s ease, border-color .25s ease;
+      border-bottom: 1px solid transparent;
+    }
+    header.scrolled { background: rgba(11, 15, 20, .88); backdrop-filter: blur(12px); border-color: var(--line); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.15rem; }
+    .logo-mark {
+      width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--accent), #6366f1); color: #04121c; font-size: .95rem;
+    }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a:not(.btn) { color: var(--muted); font-weight: 500; transition: color .15s; }
+    .nav-links a:not(.btn):hover { color: var(--text); }
+    .nav-links .btn { padding: 10px 20px; }
+    .menu-btn { display: none; background: none; border: 0; color: var(--text); cursor: pointer; padding: 8px; }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center; padding-top: 72px; position: relative; overflow: hidden;
+      background:
+        radial-gradient(900px 500px at 85% 20%, rgba(56, 189, 248, .18), transparent 60%),
+        radial-gradient(700px 500px at 0% 100%, rgba(99, 102, 241, .14), transparent 60%),
+        var(--bg);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+    .hero h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 800; margin-bottom: 20px; }
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--accent), #a5b4fc);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero .lead { margin-bottom: 32px; }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-stats { display: flex; gap: 40px; margin-top: 48px; flex-wrap: wrap; }
+    .hero-stats strong { display: block; font-size: 1.8rem; font-weight: 800; }
+    .hero-stats span { color: var(--muted); font-size: .9rem; }
+    .hero-art {
+      aspect-ratio: 1 / 1; border-radius: 28px; border: 1px solid var(--line);
+      background: linear-gradient(160deg, #142233, #0d141d); display: grid; place-items: center; position: relative;
+      box-shadow: 0 40px 80px -30px rgba(56, 189, 248, .35);
+    }
+    .hero-art svg { width: 84%; }
+    .shine { animation: shine 4s ease-in-out infinite; }
+    @keyframes shine { 0%, 100% { opacity: .2; } 50% { opacity: .9; } }
+
+    /* Services */
+    .services { background: var(--bg-alt); }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 56px; }
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 30px; transition: transform .2s ease, border-color .2s ease;
+    }
+    .card:hover { transform: translateY(-4px); border-color: rgba(56, 189, 248, .5); }
+    .icon {
+      width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center;
+      background: rgba(56, 189, 248, .12); color: var(--accent); margin-bottom: 20px;
+    }
+    .card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+    .card p { color: var(--muted); }
+
+    /* Packages */
+    .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 56px; align-items: stretch; }
+    .pkg { display: flex; flex-direction: column; position: relative; }
+    .pkg.featured { border-color: var(--accent); background: linear-gradient(180deg, rgba(56, 189, 248, .1), var(--card) 40%); }
+    .badge {
+      position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+      background: var(--accent); color: #04121c; font-size: .75rem; font-weight: 700;
+      padding: 5px 14px; border-radius: 999px; letter-spacing: .05em; text-transform: uppercase;
+    }
+    .price { font-size: 2.6rem; font-weight: 800; margin: 14px 0 4px; }
+    .price small { font-size: 1rem; color: var(--muted); font-weight: 500; }
+    .pkg ul { list-style: none; margin: 22px 0 28px; display: grid; gap: 12px; flex: 1; }
+    .pkg li { display: flex; gap: 10px; color: var(--muted); }
+    .pkg li::before { content: "✓"; color: var(--accent); font-weight: 700; }
+    .pkg .btn { justify-content: center; }
+    .note { color: var(--muted); font-size: .9rem; margin-top: 28px; }
+
+    /* Process */
+    .process { background: var(--bg-alt); }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 56px; counter-reset: step; }
+    .step { padding: 28px; border-left: 2px solid var(--line); }
+    .step::before {
+      counter-increment: step; content: "0" counter(step);
+      display: block; font-size: 2rem; font-weight: 800; color: var(--accent); margin-bottom: 10px;
+    }
+    .step h3 { margin-bottom: 8px; }
+    .step p { color: var(--muted); }
+
+    /* Reviews */
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 56px; }
+    .stars { color: #facc15; letter-spacing: 2px; margin-bottom: 14px; }
+    .review p { color: var(--text); margin-bottom: 18px; }
+    .review cite { color: var(--muted); font-style: normal; font-size: .92rem; }
+
+    /* FAQ */
+    .faq { background: var(--bg-alt); }
+    .faq-list { max-width: 780px; margin: 48px auto 0; display: grid; gap: 12px; }
+    details { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; }
+    summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--accent); font-size: 1.4rem; line-height: 1; }
+    details[open] summary::after { content: "–"; }
+    details p { color: var(--muted); margin-top: 12px; }
+
+    /* Contact */
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; margin-top: 8px; }
+    .contact-info { display: grid; gap: 18px; margin-top: 32px; }
+    .contact-item { display: flex; gap: 14px; align-items: center; }
+    .contact-item .icon { margin: 0; flex-shrink: 0; }
+    .contact-item span { display: block; color: var(--muted); font-size: .85rem; }
+    form { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; display: grid; gap: 16px; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    label { font-size: .88rem; font-weight: 500; color: var(--muted); display: grid; gap: 6px; }
+    input, select, textarea {
+      width: 100%; background: var(--bg); border: 1px solid var(--line); color: var(--text);
+      border-radius: 10px; padding: 12px 14px; font: inherit; font-size: 1rem;
+    }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); }
+    textarea { resize: vertical; min-height: 110px; }
+    form .btn { justify-content: center; }
+    .form-msg { color: var(--accent); font-weight: 500; display: none; }
+
+    footer { border-top: 1px solid var(--line); padding: 36px 0; color: var(--muted); font-size: .9rem; }
+    .foot { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .shine { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero-art { max-width: 440px; width: 100%; margin: 0 auto; }
+      .grid-3, .packages-grid, .reviews-grid { grid-template-columns: 1fr; max-width: 520px; margin-left: auto; margin-right: auto; }
+      .packages-grid { gap: 32px; }
+      .steps { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 760px) {
+      section { padding: 72px 0; }
+      .wrap { padding: 0 16px; }
+      .menu-btn { display: block; }
+      .nav-links {
+        position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; gap: 0;
+        background: rgba(11, 15, 20, .97); border-bottom: 1px solid var(--line);
+        max-height: 0; overflow: hidden; transition: max-height .3s ease;
+      }
+      .nav-links.open { max-height: 420px; }
+      .nav-links a { padding: 16px 20px; width: 100%; text-align: center; }
+      .nav-links .btn { margin: 8px 20px 20px; width: calc(100% - 40px); justify-content: center; }
+      header:has(.nav-links.open) { background: rgba(11, 15, 20, .97); }
+      .steps, .row { grid-template-columns: 1fr; }
+      .hero-stats { gap: 28px; }
+      form { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="top">
+    <div class="wrap nav">
+      <a href="#" class="logo"><span class="logo-mark">TM</span> TM Auto Detailing</a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false" id="menuBtn">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="btn btn-primary">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <p class="eyebrow">Professional Car Detailing</p>
+          <h1>Showroom shine, <span>every single time.</span></h1>
+          <p class="lead">TM Auto Detailing brings your car back to life inside and out — from a deep interior clean to paint correction and long-lasting ceramic protection.</p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">Book Your Detail →</a>
+            <a href="#packages" class="btn btn-ghost">View Packages</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>100%</strong><span>Satisfaction focus</span></div>
+            <div><strong>Mobile</strong><span>We come to you</span></div>
+            <div><strong>Pro</strong><span>Grade products</span></div>
+          </div>
+        </div>
+        <div class="hero-art reveal" aria-hidden="true">
+          <svg viewBox="0 0 400 260" fill="none">
+            <defs>
+              <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#38bdf8"/>
+                <stop offset="1" stop-color="#6366f1"/>
+              </linearGradient>
+              <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#0b0f14" stop-opacity=".9"/>
+                <stop offset="1" stop-color="#1e293b"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="200" cy="222" rx="170" ry="14" fill="#000" opacity=".45"/>
+            <path d="M40 180c0-18 10-30 30-34l50-10 40-38c10-9 22-14 36-14h70c16 0 30 7 40 19l30 36 34 8c14 3 24 15 24 29v14c0 8-6 14-14 14H54c-8 0-14-6-14-14z" fill="url(#body)"/>
+            <path d="M138 134l30-28c7-6 15-10 25-10h34v38zM239 96h30c11 0 21 5 28 14l20 24h-78z" fill="url(#glass)"/>
+            <circle cx="110" cy="200" r="28" fill="#0b0f14"/><circle cx="110" cy="200" r="14" fill="#64748b"/>
+            <circle cx="300" cy="200" r="28" fill="#0b0f14"/><circle cx="300" cy="200" r="14" fill="#64748b"/>
+            <rect x="350" y="160" width="20" height="8" rx="4" fill="#fef3c7"/>
+            <path d="M70 160h270" stroke="#fff" stroke-opacity=".35" stroke-width="2" stroke-linecap="round"/>
+            <g class="shine" fill="#fff">
+              <path d="M330 40l5 14 14 5-14 5-5 14-5-14-14-5 14-5z"/>
+              <path d="M80 70l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"/>
+              <path d="M210 30l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="center reveal">
+          <p class="eyebrow">What We Do</p>
+          <h2>Detailing services</h2>
+          <p class="lead">Every service is done by hand with professional-grade products that are safe for your paint, trim and interior.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card reveal">
+            <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15h18M5 15l2-6h10l2 6M6 19v-4M18 19v-4"/></svg></div>
+            <h3>Exterior Detail</h3>
+            <p>Hand wash, wheel and tire clean, clay bar decontamination and a protective sealant for a deep, glossy finish.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20v-6a6 6 0 0 1 12 0v6M4 20h16M9 9V5a3 3 0 0 1 6 0v4"/></svg></div>
+            <h3>Interior Detail</h3>
+            <p>Thorough vacuum, steam clean, shampoo of carpets and seats, leather conditioning and streak-free glass.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7 7 .5-5.5 4.5 2 7L12 17l-6.5 4 2-7L2 9.5 9 9z"/></svg></div>
+            <h3>Paint Correction</h3>
+            <p>Machine polishing to remove swirl marks, light scratches and oxidation, restoring clarity and depth to your paint.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div>
+            <h3>Ceramic Coating</h3>
+            <p>Long-lasting protection against UV, road salt and grime, with incredible water beading and easier washes.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></div>
+            <h3>Headlight Restoration</h3>
+            <p>Remove yellowing and haze from headlights for a cleaner look and better night-time visibility.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/></svg></div>
+            <h3>Engine Bay Clean</h3>
+            <p>Safe degreasing and dressing of the engine bay so it looks as good under the hood as it does outside.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Packages -->
+    <section id="packages">
+      <div class="wrap">
+        <div class="center reveal">
+          <p class="eyebrow">Pricing</p>
+          <h2>Detailing packages</h2>
+          <p class="lead">Simple, upfront packages. Pick the level of care your car needs.</p>
+        </div>
+        <div class="packages-grid">
+          <div class="card pkg reveal">
+            <h3>Express</h3>
+            <div class="price">$89<small> / sedan</small></div>
+            <p>A quick refresh inside and out.</p>
+            <ul>
+              <li>Hand wash &amp; dry</li>
+              <li>Wheels &amp; tires cleaned</li>
+              <li>Interior vacuum</li>
+              <li>Windows inside &amp; out</li>
+              <li>Dash &amp; console wipe-down</li>
+            </ul>
+            <a href="#contact" class="btn btn-ghost" data-package="Express">Choose Express</a>
+          </div>
+          <div class="card pkg featured reveal">
+            <span class="badge">Most Popular</span>
+            <h3>Full Detail</h3>
+            <div class="price">$199<small> / sedan</small></div>
+            <p>Our complete interior and exterior detail.</p>
+            <ul>
+              <li>Everything in Express</li>
+              <li>Clay bar decontamination</li>
+              <li>Paint sealant (3–6 months)</li>
+              <li>Seat &amp; carpet shampoo</li>
+              <li>Leather clean &amp; condition</li>
+              <li>Door jambs &amp; trim dressed</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary" data-package="Full Detail">Choose Full Detail</a>
+          </div>
+          <div class="card pkg reveal">
+            <h3>Ceramic Pro</h3>
+            <div class="price">$699<small> +</small></div>
+            <p>Correction plus long-term protection.</p>
+            <ul>
+              <li>Everything in Full Detail</li>
+              <li>One-step paint correction</li>
+              <li>Ceramic coating (multi-year)</li>
+              <li>Wheel faces coated</li>
+              <li>Glass water repellent</li>
+            </ul>
+            <a href="#contact" class="btn btn-ghost" data-package="Ceramic Pro">Choose Ceramic Pro</a>
+          </div>
+        </div>
+        <p class="note center">SUVs, trucks and heavily soiled vehicles may cost extra. Contact us for an exact quote.</p>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process">
+      <div class="wrap">
+        <div class="center reveal">
+          <p class="eyebrow">How It Works</p>
+          <h2>Booking is easy</h2>
+        </div>
+        <div class="steps">
+          <div class="step reveal"><h3>Request</h3><p>Send us a booking request with your vehicle and the package you want.</p></div>
+          <div class="step reveal"><h3>Confirm</h3><p>We get back to you to confirm the price, date and location.</p></div>
+          <div class="step reveal"><h3>Detail</h3><p>We arrive with everything needed and get to work on your car.</p></div>
+          <div class="step reveal"><h3>Enjoy</h3><p>Inspect the results with us and enjoy that fresh, like-new feeling.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews">
+      <div class="wrap">
+        <div class="center reveal">
+          <p class="eyebrow">Reviews</p>
+          <h2>What customers say</h2>
+        </div>
+        <div class="reviews-grid">
+          <div class="card review reveal">
+            <div class="stars">★★★★★</div>
+            <p>“My car hasn't looked this good since I bought it. The interior smells brand new.”</p>
+            <cite>— Customer review</cite>
+          </div>
+          <div class="card review reveal">
+            <div class="stars">★★★★★</div>
+            <p>“On time, professional and the paint correction got rid of every swirl mark. Highly recommend.”</p>
+            <cite>— Customer review</cite>
+          </div>
+          <div class="card review reveal">
+            <div class="stars">★★★★★</div>
+            <p>“Super convenient — they came to my driveway. Kids' car seats and all, spotless.”</p>
+            <cite>— Customer review</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+      <div class="wrap">
+        <div class="center reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2>Common questions</h2>
+        </div>
+        <div class="faq-list">
+          <details class="reveal"><summary>How long does a detail take?</summary><p>An Express detail takes about 1–2 hours, a Full Detail 3–5 hours, and ceramic coating packages usually take a full day.</p></details>
+          <details class="reveal"><summary>Do you come to me?</summary><p>Yes — we offer mobile detailing at your home or workplace. Just let us know your address when you book.</p></details>
+          <details class="reveal"><summary>Do I need to provide water or power?</summary><p>Access to an outdoor tap and power outlet is helpful. If that isn't available, mention it when booking and we'll work something out.</p></details>
+          <details class="reveal"><summary>How do I pay?</summary><p>Payment is taken once the job is finished and you're happy with the result. We accept cash, card and e-transfer.</p></details>
+          <details class="reveal"><summary>How long does ceramic coating last?</summary><p>Depending on the coating chosen and how the car is maintained, ceramic coatings last from 2 to 5 years.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="wrap contact-grid">
+        <div class="reveal">
+          <p class="eyebrow">Book Now</p>
+          <h2>Ready for a fresh, clean car?</h2>
+          <p class="lead">Send us a request and we'll get back to you to confirm your appointment.</p>
+          <div class="contact-info">
+            <a class="contact-item" href="tel:+10000000000">
+              <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
+              <div><span>Call or text</span>(000) 000-0000</div>
+            </a>
+            <a class="contact-item" href="mailto:info@tmautodetailing.com">
+              <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></div>
+              <div><span>Email</span>info@tmautodetailing.com</div>
+            </a>
+            <div class="contact-item">
+              <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+              <div><span>Hours</span>Mon–Sat · 8am – 7pm</div>
+            </div>
+          </div>
+        </div>
+        <form class="reveal" id="bookingForm">
+          <div class="row">
+            <label>Name<input name="name" required autocomplete="name"></label>
+            <label>Phone<input name="phone" type="tel" required autocomplete="tel"></label>
+          </div>
+          <label>Email<input name="email" type="email" autocomplete="email"></label>
+          <div class="row">
+            <label>Vehicle<input name="vehicle" placeholder="e.g. 2021 Honda Civic"></label>
+            <label>Package
+              <select name="package" id="packageSelect">
+                <option>Express</option>
+                <option selected>Full Detail</option>
+                <option>Ceramic Pro</option>
+                <option>Not sure — need a quote</option>
+              </select>
+            </label>
+          </div>
+          <label>Preferred date<input name="date" type="date"></label>
+          <label>Message<textarea name="message" placeholder="Anything we should know? (pet hair, stains, location...)"></textarea></label>
+          <button class="btn btn-primary" type="submit">Send Booking Request</button>
+          <p class="form-msg" id="formMsg">Opening your email app to send the request…</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <a href="#" class="logo"><span class="logo-mark">TM</span> TM Auto Detailing</a>
+      <p>© <span id="year"></span> TM Auto Detailing. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const BOOKING_EMAIL = "info@tmautodetailing.com";
+
+    const header = document.querySelector("header");
+    const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    menuBtn.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", open);
+    });
+    navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuBtn.setAttribute("aria-expanded", "false");
+    }));
+
+    const packageSelect = document.getElementById("packageSelect");
+    document.querySelectorAll("[data-package]").forEach(btn =>
+      btn.addEventListener("click", () => { packageSelect.value = btn.dataset.package; })
+    );
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("bookingForm").addEventListener("submit", e => {
+      e.preventDefault();
+      const d = Object.fromEntries(new FormData(e.target));
+      const body = [
+        `Name: ${d.name}`, `Phone: ${d.phone}`, `Email: ${d.email || "-"}`,
+        `Vehicle: ${d.vehicle || "-"}`, `Package: ${d.package}`, `Preferred date: ${d.date || "-"}`,
+        "", d.message || ""
+      ].join("\n");
+      document.getElementById("formMsg").style.display = "block";
+      window.location.href = `mailto:${BOOKING_EMAIL}?subject=${encodeURIComponent("Booking request – " + d.package)}&body=${encodeURIComponent(body)}`;
+    });
+  </script>
+</body>
+</html>
